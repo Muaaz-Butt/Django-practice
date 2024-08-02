@@ -1,0 +1,28 @@
+{% extends 'navbar.html'%}
+
+{% load static %}
+
+{% block title %}
+
+ Members Name
+
+{% endblock %}
+
+{% block content %}
+    <link rel = "stylesheet" href = "{% static 'my_first.css' %}">
+
+    <h1>Members</h1>
+    <a class = "btn btn-sm btn-info" href="{% url 'create_member' %}">Add New Member</a>
+        <ul>
+            {% for member in all_members%}
+          <li> 
+              <a class = "btn btn-sm btn-info" href = "{% url 'details' id=member.id %}"> {{member.id}} </a> : {{member.first_name}} {{member.last_name}} 
+              <a class = "btn btn-sm btn-info" href="{% url 'update_member' member.id %}">Edit</a>
+              <a class = "btn btn-sm btn-info" href="{% url 'delete_member' member.id %}">Delete</a>
+          </li>
+          {% endfor %}
+        </ul>
+        <p> Back to <a class = "btn btn-sm btn-info" href = "{% url 'main' %}"> Home </a>
+
+
+{% endblock %}

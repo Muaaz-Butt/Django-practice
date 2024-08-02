@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+
+  Member-details
+
+{% endblock %}
+
+{% block content %}
+
+    <h1> {{member.first_name}} {{member.last_name}} </h1>
+    <p>Phone: {{member.phone}}</p>
+    <p>Email: {{member.email}}</p>
+    <p> Back to <a class = "btn btn-sm btn-info" href = "{% url 'members' %}"> All Members </a>
+
+ {% endblock %}

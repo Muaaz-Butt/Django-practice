@@ -1,0 +1,15 @@
+{% extends "navbar.html" %}
+
+{% block title %}
+  My Tennis Club
+{% endblock %}
+
+
+{% block content %}
+  <h1>My Tennis Club</h1>
+
+  <h3>Members</h3>
+  
+  <p>Check out all our <a class = "btn btn-sm btn-info" href= "{% url 'members' %}" >members</a></p>
+  
+{% endblock %}

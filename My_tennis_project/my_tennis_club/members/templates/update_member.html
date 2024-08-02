@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+
+{% block content %}
+  <h2>Update Member: {{ member.first_name }} {{ member.last_name }}</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class = "btn btn-sm btn-info" type="submit">Update Member</button>
+  </form>
+{% endblock %}
